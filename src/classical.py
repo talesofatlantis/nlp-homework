@@ -1,6 +1,4 @@
 """TF-IDF + Logistic Regression baseline."""
-from __future__ import annotations
-
 import time
 
 import numpy as np
@@ -20,5 +18,4 @@ def run_classical(
     X_test = vec.transform(texts_test)
     clf = LogisticRegression(max_iter=1000, random_state=seed)
     clf.fit(X_train, y_train)
-    y_pred = clf.predict(X_test)
-    return y_pred, time.time() - t0
+    return clf.predict(X_test), time.time() - t0

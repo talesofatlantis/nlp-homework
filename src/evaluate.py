@@ -1,15 +1,14 @@
 """Build the side-by-side comparison table."""
-from __future__ import annotations
-
 import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, f1_score
 
 
 def score(y_true: np.ndarray, y_pred: np.ndarray) -> tuple[float, float]:
-    acc = accuracy_score(y_true, y_pred)
-    f1 = f1_score(y_true, y_pred, average="macro")
-    return float(acc), float(f1)
+    return (
+        float(accuracy_score(y_true, y_pred)),
+        float(f1_score(y_true, y_pred, average="macro")),
+    )
 
 
 def build_results(rows: list[dict]) -> pd.DataFrame:

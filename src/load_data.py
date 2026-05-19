@@ -1,6 +1,4 @@
 """Download and load the SMS Spam Collection dataset."""
-from __future__ import annotations
-
 import urllib.request
 from pathlib import Path
 
@@ -8,7 +6,6 @@ import pandas as pd
 
 DATA_DIR = Path("data/raw")
 SMS_PATH = DATA_DIR / "sms.tsv"
-
 MIRRORS = [
     "https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/sms.tsv",
 ]
@@ -18,7 +15,7 @@ def download_sms(target: Path = SMS_PATH) -> Path:
     target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists() and target.stat().st_size > 50_000:
         return target
-    last_err: Exception | None = None
+    last_err = None
     for url in MIRRORS:
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "nlp-hw/1.0"})
