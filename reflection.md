@@ -1,5 +1,7 @@
 # Reflection
 
+**HSLU | FS2026 | IAI | Paloma Daniele**
+
 ## 1. Which approach won, and what does that tell you about when a classical method is still worth using?
 
 The classical baseline won decisively: **0.967 accuracy / 0.920 macro F1
