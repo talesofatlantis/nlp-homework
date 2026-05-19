@@ -1,13 +1,13 @@
-# Reproducible NLP Pipeline in a Container — Slim Version
+# Reproducible NLP Pipeline in a Container
 
-HSLU FS26 — Machine Learning, NLP and Toolchain (Prof. Dr. Marcel Blattner)
+HSLU FS26 - Machine Learning, NLP and Toolchain (Prof. Dr. Marcel Blattner)
 Homework SW05, slim track.
 
 Compares a classical **TF-IDF + Logistic Regression** baseline against a
 pretrained, zero-shot **Hugging Face transformer**
 (`distilbert-base-uncased-finetuned-sst-2-english`) on the
 **SMS Spam Collection**. Same train/test split, same metrics,
-side-by-side numbers — packaged so a stranger reproduces it in two
+side-by-side numbers - packaged so a stranger reproduces it in two
 commands.
 
 ## Reproduce (the two commands)
@@ -21,7 +21,7 @@ The container downloads the dataset and transformer weights on first run,
 trains the classical model, runs zero-shot inference, prints the
 comparison table to stdout, and writes `results/results.csv`.
 
-## For the grader — setup from scratch
+## Setup from scratch
 
 ```bash
 # 1. Clone
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 python -m src.main
 ```
 
-Python 3.11 is required — the pinned `torch==2.4.1` wheel does not exist
+Python 3.11 is required - the pinned `torch==2.4.1` wheel does not exist
 for 3.13.
 
 ## Results
@@ -70,7 +70,7 @@ for 3.13.
 | DistilBERT SST-2 (zero-shot)      | 0.450    | 0.426    | 137.36   |
 
 The classical baseline wins by 50 percentage points. The transformer
-loses because it is a sentiment model misapplied to spam — see
+loses because it is a sentiment model misapplied to spam - see
 [`reflection.md`](reflection.md) for why this is the most interesting
 result the slide deck could have asked for.
 
@@ -86,7 +86,7 @@ result the slide deck could have asked for.
 - **Date downloaded:** 2026-05-19
 - **Size:** 5,572 labelled SMS messages (4,825 ham / 747 spam)
 
-Not committed to this repository — fetched at runtime into `data/raw/sms.tsv`.
+Not committed to this repository - fetched at runtime into `data/raw/sms.tsv`.
 
 ## Layout
 
